@@ -51,7 +51,7 @@ object ECommercyUtils extends ECommercyConsts {
       .getOrCreate()
   }
 
-  def loadConfig(path: String): Map[String, String] = {
+  def loadConfig(path: String): collection.mutable.Map[String, String] = {
     val url = getClass.getResource(path)
     val properties: Properties = new Properties()
 
@@ -64,7 +64,7 @@ object ECommercyUtils extends ECommercyConsts {
       throw new FileNotFoundException("Properties file cannot be loaded")
     }
 
-    properties.asScala.toMap
+    properties.asScala
 
   }
 

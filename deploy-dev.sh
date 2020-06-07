@@ -4,7 +4,7 @@ export REBUILD=$1
 export SCALA_VERSION=2.11
 
 if [ "$REBUILD" -eq  "1" ]; then
-    sbt clean build
+    sbt clean assembly
 fi
 
 if [ ! -d "$DIRECTORY" ]; then
